@@ -1,0 +1,27 @@
+/* Estilo para o rodapé */
+.rodape {
+   
+    background-color: black; /* Fundo preto */
+    color: white; /* Texto branco */
+    padding: 20px;
+    text-align: center;
+    font-size: 20px; /* Tamanho da fonte maior e mais agradável */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+.info-treino, .comentarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+     gap: 20px; /*espaçamento entre as colunas */
+     padding: 20px;
+     margin-top: 25px;
+}
+
+
+
+ 
+
+
+
+
+
+
