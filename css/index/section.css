@@ -1,0 +1,67 @@
+.inicio {
+    background-image: url(/Imagens/piano.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Garante que a imagem de fundo cubra todo o espaço matendo a proporção */
+    background-position: center;
+    min-height: calc(100vh - 40px);
+    /* Calcula a altura da tela menos a altura do header */
+    width: 100%;
+    padding-top: 48px;
+    /* Desloca o conteúdo da section para baixo */
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+}
+
+section h1 {
+    font-size: 45px;
+    color: #ffffff;
+    margin-top: 20px;
+    /* Ajusta o espaço entre o h1 e o topo da section */
+    margin-bottom: 80px;
+    /* Ajusta a distância entre o h1 e os botões */
+}
+
+section p {
+    margin-bottom: 20px;
+    /* Ajusta a distância entre os botões e o texto */
+}
+
+.informacoes {
+
+
+    font-size: 30px;
+    color: #ffffff;
+    background-image: url(/Imagens/aula-de-piano.jpg);
+    background-size: 100% auto;
+    background-position: right bottom;
+    min-height: calc(100vh - 40px);
+    /* Calcula a altura da tela menos a altura do header */
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    /* Alinha os itens verticalmente */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+}
+
+.inform {
+
+    padding: 10px 80px 110px 215px;
+    margin: 10px 50px 10px;
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Adiciona uma sombra ao texto */
+}

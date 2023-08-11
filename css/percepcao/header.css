@@ -1,0 +1,18 @@
+header{
+    background-color: rgb(71, 68, 68);
+    color:  #ffffff; /* Cor do texto das opções */
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+nav{
+    display: flex;/* Cria uma flexbox para organizar as opções do cabeçalho */
+    justify-content: space-around; /* Espaça as opções igualmente */
+    align-items: center; /* Centraliza as opções verticalmente */
+}
+nav a {
+    color:  #ffffff; /* Cor do texto das opções */
+    text-decoration: none; /* Remove sublinhado dos links */
+    padding: 5px 10px; /* Espaçamento interno das opções */
+}

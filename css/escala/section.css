@@ -1,0 +1,21 @@
+section {
+    min-height: calc(100vh - 40px);
+    /* Calcula a altura da tela menos a altura do header */
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+.selects {
+    display: flex;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+section h2 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+
