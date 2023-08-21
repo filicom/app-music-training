@@ -1,21 +1,109 @@
-section {
-    min-height: calc(100vh - 40px);
-    /* Calcula a altura da tela menos a altura do header */
+body {
+    background-color: #ebebeb;
+}
+
+.home {
+
     padding-top: 100px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 89px;
 
 }
+
 .selects {
     display: flex;
     padding-bottom: 20px;
     gap: 10px;
 }
+
 section h2 {
     font-size: 40px;
     padding-bottom: 20px;
 }
 
+.piano {
+    background-color: #121212;
+    width: 1200px;
+    height: 265px;
+    margin: auto;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: wheat;
+}
 
+.teclas {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: flex;
+
+}
+
+.branca {
+    background-color: white;
+    flex-grow: 1;
+    border-radius: 5px;
+    border-bottom: 8px solid #ddd;
+    margin-left: -17px;
+    z-index: 1;
+    color: #333;
+
+}
+
+.tecla {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 8px;
+    user-select: none;
+
+}
+
+.preta {
+    width: 40px;
+    background: linear-gradient(black, #333);
+    height: 120px;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 8px solid #222;
+    margin-left: -20px;
+    z-index: 2;
+}
+
+.teclas .branca:nth-child(1) {
+    margin-left: 0px;
+}
+
+.teclas .branca:nth-child(5) {
+    margin-right: 20px;
+}
+
+.teclas .branca:nth-child(12) {
+    margin-right: 20px;
+}
+
+.teclas .branca:nth-child(17) {
+    margin-right: 20px;
+}
+
+.teclas .branca:nth-child(24) {
+    margin-right: 20px;
+}
+
+.branca-pressionada {
+    background-color: #ddd;
+    border-Bottom: none;
+}
+
+.preta-pressionada {
+    background: linear-gradient(#222, black);
+    border-Bottom: none;
+}

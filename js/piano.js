@@ -1,4 +1,8 @@
 const teclas = document.querySelectorAll(".tecla");
+teclas.forEach((tecla) => {
+    tecla.addEventListener("mousedown", () => clicoumousedown(tecla))
+    tecla.addEventListener("mouseup", () => clicoumouseup(tecla))
+})
 const tocarNota = (nota) => {
     const audio = new Audio(`../notas/${nota}.wav`)
     audio.play()
@@ -11,16 +15,13 @@ const clicoumousedown = (tecla) => {
         tecla.classList.add("preta-pressionada")
         return;
     }
-    tecla.style.background = "#ddd"
+    tecla.classList.add("branca-pressionada")
+
 }
 const clicoumouseup = (tecla) => {
     if (tecla.className.includes("preta")) {
         tecla.classList.remove("preta-pressionada")
         return;
     }
-    tecla.style.background = "white"
+    tecla.classList.remove("branca-pressionada")
 }
-teclas.forEach((tecla) => {
-    tecla.addEventListener("mousedown", () => clicoumousedown(tecla))
-    tecla.addEventListener("mouseup", () => clicoumouseup(tecla))
-})
