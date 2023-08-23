@@ -65,7 +65,7 @@ section h2 {
     justify-content: center;
     padding-bottom: 8px;
     user-select: none;
-
+    cursor: pointer;
 }
 
 .preta {
