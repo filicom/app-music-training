@@ -107,3 +107,20 @@ section h2 {
     background: linear-gradient(#222, black);
     border-Bottom: none;
 }
+
+.escalaBranca {
+    background:linear-gradient(#ddd,rgb(23, 69, 194));
+    border-Bottom: none;
+}
+.escalaPreta {
+    background: linear-gradient(#222, rgb(23, 69, 194));
+    border-Bottom: none;
+}
+
+#escalas{
+cursor: pointer;
+}
+#tom {
+    cursor: pointer;
+}
+
