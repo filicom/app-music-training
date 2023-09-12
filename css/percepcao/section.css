@@ -111,3 +111,8 @@ section p {
     background: linear-gradient(#222, black);
     border-Bottom: none;
 }
+
+.teclaCorreta {
+    background: linear-gradient(#050e85, rgb(77, 67, 226));
+    border-Bottom: none;
+}

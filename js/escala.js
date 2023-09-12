@@ -3,7 +3,6 @@ const tom = document.getElementById("tom")
 
 const teclas = document.querySelectorAll(".tecla");      //seleciona todas teclas
 const visualizar = document.querySelector("#visualizar") //botão visualizar
-const resp = document.querySelector("h3")
 
 class EscalaMusical {
     constructor(escala, tom) { //na prática deste codigo vai envolver o select escala/tom
@@ -45,7 +44,7 @@ class EscalaMusical {
         const intervalos = [2, 1, 2, 2, 1, 2, 2]
         //números que representa a escala cromática de acordo como arquivo .wav
         const notas = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24']
-        //obter a primeira nota da tonalidade
+        //obter a primeira nota da tonalidade, a qual o tom tem o value = number
         const NotaInicial = notas.indexOf(this.tom)
         //vetor escala menor formada para ser incrementada posteriormente
         const EscalaMenorFormada = [this.tom]
@@ -102,8 +101,7 @@ visualizar.addEventListener("click", () => {
     const escalaSelecionada = escalas.value
     const tomSelecionado = tom.value
     // Limpar as marcações anteriores
-    const TodasAsTeclas = document.querySelectorAll(".tecla")
-    TodasAsTeclas.forEach((tecla) => {
+    teclas.forEach((tecla) => {
         tecla.classList.remove("escalaPreta")
         tecla.classList.remove("escalaBranca")
     })

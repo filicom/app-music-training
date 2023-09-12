@@ -2,11 +2,25 @@ const iniciar = document.getElementById("iniciar");
 const novamente = document.getElementById("tentar-novamente");
 const resp = document.querySelector("h3");
 const teclas = document.querySelectorAll(".tecla");
-
 let contador = 0;
 let NotaAleatoria = "";
 let NotaTocada = "";
 let primeiraTentativa = true; //  variável para controlar a primeira tentativa
+
+const tocarNota = (nota) => {
+  const audio = new Audio(`../notas/${nota}.wav`);
+  audio.play();
+};
+
+const RandomNumber = () => {
+  return Math.floor(Math.random() * 25) + 1;
+};
+
+const resetTeclas = () => {
+  teclas.forEach((tecla) => {
+    tecla.classList.remove("teclaCorreta");
+  });
+}
 
 const clicoumousedown = (tecla) => {
   if (primeiraTentativa) {
@@ -16,11 +30,14 @@ const clicoumousedown = (tecla) => {
       contador++;
       resp.innerText = "Acertos: " + contador;
       primeiraTentativa = false;
-    } else {
+    } else if (NotaTocada !== NotaAleatoria) {
+      
+        teclas[NotaAleatoria - 1].classList.add("teclaCorreta"); // Tecla correta
+      
       primeiraTentativa = false; // Se a nota errada foi tocada, desabilita a primeira tentativa
     }
   }
- 
+
   tocarNota(tecla.getAttribute('data-nota')); //chamamento da função para que a nota seja tocada
 
   if (tecla.className.includes("preta")) {
@@ -38,17 +55,8 @@ const clicoumouseup = (tecla) => {
   tecla.classList.remove("branca-pressionada");
 };
 
-const tocarNota = (nota) => {
-  const audio = new Audio(`../notas/${nota}.wav`);
-  audio.play();
-};
-
-const RandomNumber = () => {
-  return Math.floor(Math.random() * 25) + 1;
-};
-
 teclas.forEach((tecla) => {    //percorre e adiciona eventos em cada tecla
-  tecla.addEventListener("mousedown", () => clicoumousedown(tecla)); 
+  tecla.addEventListener("mousedown", () => clicoumousedown(tecla));
   tecla.addEventListener("mouseup", () => clicoumouseup(tecla));
 
   tecla.addEventListener("mouseout", () => clicoumouseup(tecla)); //evento necessário para que ao arrastar o mouse a tecla não permaneça selecionada
@@ -60,9 +68,14 @@ iniciar.addEventListener("click", () => {
   tocarNota(NotaAleatoria); // exibe audio da nota aleatória
   resp.innerText = "Acertos: " + contador;
   primeiraTentativa = true; // Reseta a primeira tentativa ao clicar em "Iniciar"
+
+  //limpa marcações feitas nas teclas
+  resetTeclas()
 });
 
 novamente.addEventListener("click", () => {
   contador = 0
   resp.innerText = "Acertos: " + contador;
+  resetTeclas()
 })
+
