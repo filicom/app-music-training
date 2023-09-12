@@ -61,11 +61,11 @@ const clicoumousedown = (tecla) => {
         notaPressionada(tecla)
         tentarNovamente()
         tentativa.innerText = "Tentativas: 10"
-        tentativas = 10
         setTimeout(() => {
           alert("Tentativas esgotadas, tente novamente!");
           resetTeclas()
-        }, 1800); // Atrasa a execução do alert
+          tentativas = 10
+        }, 1200); // Atrasa a execução do alert
       }
     }
   }
