@@ -1,7 +1,9 @@
 const iniciar = document.getElementById("iniciar");
 const novamente = document.getElementById("tentar-novamente");
-const resp = document.querySelector("h3");
+const resp = document.querySelector("#resp");
+const tentativa = document.querySelector("#tentativa");
 const teclas = document.querySelectorAll(".tecla");
+let tentativas = 10;
 let contador = 0;
 let NotaAleatoria = "";
 let NotaTocada = "";
@@ -18,11 +20,26 @@ const RandomNumber = () => {
 
 const resetTeclas = () => {
   teclas.forEach((tecla) => {
-    tecla.classList.remove("teclaCorreta");
+    tecla.classList.remove("teclaBrancaCorreta");
+    tecla.classList.remove("teclaPretaCorreta");
   });
 }
-
+const tentarNovamente = () => {
+  contador = 0
+  resp.innerText = "Acertos: " + contador;
+  
+}
+const notaPressionada = (tecla) => {
+  tocarNota(tecla.getAttribute('data-nota')); //chamamento da função para que a nota seja tocada
+  if (tecla.className.includes("preta")) {
+    tecla.classList.add("preta-pressionada"); // muda o estilo da nota pressionada
+  }
+  tecla.classList.add("branca-pressionada");
+}
 const clicoumousedown = (tecla) => {
+  notaPressionada(tecla)
+
+
   if (primeiraTentativa) {
     NotaTocada = tecla.getAttribute('data-nota'); //armazena a nota a qual é selecionada pelo atributo
 
@@ -31,26 +48,34 @@ const clicoumousedown = (tecla) => {
       resp.innerText = "Acertos: " + contador;
       primeiraTentativa = false;
     } else if (NotaTocada !== NotaAleatoria) {
-      
-        teclas[NotaAleatoria - 1].classList.add("teclaCorreta"); // Tecla correta
-      
-      primeiraTentativa = false; // Se a nota errada foi tocada, desabilita a primeira tentativa
+      if (teclas[NotaAleatoria - 1].classList.contains("preta")) {
+        teclas[NotaAleatoria - 1].classList.add("teclaPretaCorreta"); // Tecla correta irá mudar de cor
+      } else if (teclas[NotaAleatoria - 1].classList.contains("branca")) {
+        teclas[NotaAleatoria - 1].classList.add("teclaBrancaCorreta"); // Tecla correta irá mudar de cor
+      }
+      primeiraTentativa = false; // após a nota errada ser tocada mesmo clicando na certa não irá incrementar o contador
+      if (tentativas > 0) {
+        tentativas--
+        tentativa.innerText = "Tentativas: " + tentativas
+      } else if (tentativas === 0) {
+        notaPressionada(tecla)
+        tentarNovamente()
+        tentativa.innerText = "Tentativas: 10"
+        tentativas = 10
+        setTimeout(() => {
+          alert("Tentativas esgotadas, tente novamente!");
+          resetTeclas()
+        }, 1800); // Atrasa a execução do alert
+      }
     }
   }
 
-  tocarNota(tecla.getAttribute('data-nota')); //chamamento da função para que a nota seja tocada
-
-  if (tecla.className.includes("preta")) {
-    tecla.classList.add("preta-pressionada"); // muda o estilo da nota pressionada
-    return;
-  }
-  tecla.classList.add("branca-pressionada");
 };
 
 const clicoumouseup = (tecla) => {
   if (tecla.className.includes("preta")) {
     tecla.classList.remove("preta-pressionada");  //remove o estilo da nota que havia sido pressionada
-    return;
+
   }
   tecla.classList.remove("branca-pressionada");
 };
@@ -74,8 +99,8 @@ iniciar.addEventListener("click", () => {
 });
 
 novamente.addEventListener("click", () => {
-  contador = 0
-  resp.innerText = "Acertos: " + contador;
+  tentarNovamente()
   resetTeclas()
 })
+
 

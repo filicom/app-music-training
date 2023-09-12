@@ -4,7 +4,7 @@ body {
 
 .home {
 
-    padding-top: 120px;
+    padding-top: 79px;
     /* Desloca o conteúdo da section para baixo */
     justify-content: center;
     /* Centraliza os itens horizontalmente */
@@ -112,7 +112,13 @@ section p {
     border-Bottom: none;
 }
 
-.teclaCorreta {
-    background: linear-gradient(#050e85, rgb(77, 67, 226));
+.teclaBrancaCorreta {
+    background:linear-gradient(#ddd,rgb(23, 69, 194));
     border-Bottom: none;
+   
+}
+.teclaPretaCorreta {
+    background: linear-gradient(#222, rgb(23, 69, 194));
+    border-Bottom: none;
+    
 }
