@@ -122,3 +122,13 @@ section p {
     border-Bottom: none;
     
 }
+.teclaBrancaErrada {
+    background:linear-gradient(#ddd,rgb(250, 3, 3));
+    border-Bottom: none;
+   
+}
+.teclaPretaErrada {
+    background: linear-gradient(#222, rgb(250, 3, 3));
+    border-Bottom: none;
+    
+}

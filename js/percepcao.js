@@ -22,10 +22,14 @@ const resetTeclas = () => {
   teclas.forEach((tecla) => {
     tecla.classList.remove("teclaBrancaCorreta");
     tecla.classList.remove("teclaPretaCorreta");
+    tecla.classList.remove("teclaBrancaErrada");
+    tecla.classList.remove("teclaPretaErrada");
   });
 }
 const tentarNovamente = () => {
   contador = 0
+  tentativas = 10
+  tentativa.innerText = "Tentativas: 10"
   resp.innerText = "Acertos: " + contador;
   
 }
@@ -47,12 +51,19 @@ const clicoumousedown = (tecla) => {
       contador++;
       resp.innerText = "Acertos: " + contador;
       primeiraTentativa = false;
-    } else if (NotaTocada !== NotaAleatoria) {
+    } else if (NotaTocada !== NotaAleatoria) {  //se errar a nota...
       if (teclas[NotaAleatoria - 1].classList.contains("preta")) {
         teclas[NotaAleatoria - 1].classList.add("teclaPretaCorreta"); // Tecla correta irá mudar de cor
       } else if (teclas[NotaAleatoria - 1].classList.contains("branca")) {
-        teclas[NotaAleatoria - 1].classList.add("teclaBrancaCorreta"); // Tecla correta irá mudar de cor
+        teclas[NotaAleatoria - 1].classList.add("teclaBrancaCorreta"); 
       }
+
+      if (teclas[NotaTocada - 1].classList.contains("preta")) {
+        teclas[NotaTocada - 1].classList.add("teclaPretaErrada"); // Tecla Errada irá mudar de cor
+      } else if (teclas[NotaTocada - 1].classList.contains("branca")) {
+        teclas[NotaTocada - 1].classList.add("teclaBrancaErrada");
+      }
+
       primeiraTentativa = false; // após a nota errada ser tocada mesmo clicando na certa não irá incrementar o contador
       if (tentativas > 0) {
         tentativas--
@@ -60,11 +71,9 @@ const clicoumousedown = (tecla) => {
       } else if (tentativas === 0) {
         notaPressionada(tecla)
         tentarNovamente()
-        tentativa.innerText = "Tentativas: 10"
         setTimeout(() => {
           alert("Tentativas esgotadas, tente novamente!");
           resetTeclas()
-          tentativas = 10
         }, 1200); // Atrasa a execução do alert
       }
     }
@@ -101,6 +110,7 @@ iniciar.addEventListener("click", () => {
 novamente.addEventListener("click", () => {
   tentarNovamente()
   resetTeclas()
+
 })
 
 
