@@ -38,7 +38,7 @@ section p {
 
     font-size: 30px;
     color: #ffffff;
-    background-image: url(/Imagens/aula-de-piano.jpg);
+    background-image: url(Imagens/aula-de-piano.jpg);
     background-size: 100% auto;
     background-position: right bottom;
     min-height: calc(100vh - 40px);
