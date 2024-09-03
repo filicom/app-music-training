@@ -1,5 +1,7 @@
 body {
-    background-color: #ebebeb;
+    background-color: #3b82f6;
+    margin: 0;
+    padding: 0;
 }
 
 .home {
@@ -9,7 +11,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 89px;
+    margin-bottom: 1.3rem;
 
 }
 
@@ -19,9 +21,25 @@ body {
     gap: 10px;
 }
 
-section h2 {
+section h1 {
     font-size: 40px;
     padding-bottom: 20px;
+    color: #ffffff;
+}
+#visualizar {
+    width: 13rem;
+    padding: 1.2em 0; /* Ajuste de padding para aumentar o tamanho dos botões */
+    font-size: 1.1em; /* Aumenta o tamanho da fonte */
+    background-color: #1245b3; /* Cor de fundo dos botões */
+    color: #ffffff; /* Cor do texto dos botões */
+    border: none; /* Remover borda */
+    border-radius: 8px; /* Borda arredondada */
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+#visualizar:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+    background-color: rgb(27, 60, 150);; /* Cor do botão ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.1s ease; 
 }
 
 .piano {

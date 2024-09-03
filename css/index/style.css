@@ -1,0 +1,74 @@
+/* Remover margens e padding do body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo da seção */
+.program {
+    background: radial-gradient(circle at 50%, rgb(30, 58, 138) 40%, #3b82f6 100%);
+}
+
+.inicio {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Garante que a seção preencha 100% da altura da tela */
+    width: 100%;
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0; /* Remove qualquer margem da seção */
+}
+
+/* Estilo do título */
+section h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* Estilo dos botões */
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espaçamento entre os botões */
+    width: 100%; /* Garante que os botões ocupem 100% da largura disponível */
+    max-width: 500px; /* Define uma largura máxima para os botões */
+}
+
+.botoes a button {
+    width: 100%; /* Botões ocupam 100% da largura do elemento pai */
+    padding: 1.8em 0; /* Ajuste de padding para aumentar o tamanho dos botões */
+    font-size: 1.4em; /* Aumenta o tamanho da fonte */
+    background-color: #2563eb; /* Cor de fundo dos botões */
+    color: #ffffff; /* Cor do texto dos botões */
+    border: none; /* Remover borda */
+    border-radius: 8px; /* Borda arredondada */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave de cor e tamanho */
+}
+
+.botoes a button:hover {
+    background-color: #1d4ed8; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Aumenta o tamanho do botão ao passar o mouse */
+    color: #ffffff; /* Garante que a cor do texto permaneça branca */
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 36px;
+    }
+
+    .botoes a button {
+        padding: 1.5em 0; /* Padding ajustado para telas menores */
+        font-size: 1.3em; /* Tamanho da fonte ligeiramente menor em telas pequenas */
+    }
+}

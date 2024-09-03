@@ -1,5 +1,5 @@
 header{
-    background-color: rgb(71, 68, 68);
+    background-color: rgb(30, 58, 138);
     padding: 10px;
     position: fixed;
     top: 0;
@@ -7,14 +7,18 @@ header{
 }
 nav{
     display: flex;/* Cria uma flexbox para organizar as opções do cabeçalho */
-    justify-content: space-around; /* Espaça as opções igualmente */
+    justify-content:space-around; /* Espaça as opções*/
     align-items: center; /* Centraliza as opções verticalmente */
 }
 nav a {
     color:  #ffffff; /* Cor do texto das opções */
     padding: 5px 10px; /* Espaçamento interno das opções */
+    font-size: 1.2rem;
 }
 nav a:hover {
     text-decoration: none;
-    color: rgb(7, 7, 7);
+    color: #ffffff;
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    background-color: rgb(27, 60, 150);; /* Cor ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.1s ease; 
 }

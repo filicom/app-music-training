@@ -1,21 +1,24 @@
 body {
-    background-color: #ebebeb;
+    background-color: #3b82f6;
+    margin: 0;
+    padding: 0;
 }
 
 .home {
 
-    padding-top: 79px;
-    /* Desloca o conteúdo da section para baixo */
-    justify-content: center;
-    /* Centraliza os itens horizontalmente */
+    padding-top: 100px;
+    display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 1.3rem;
+    color: #fff;
 }
 
 section h1 {
-    font-size: 35px;
-    padding-bottom: 15px;
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: #fff;
 }
 
 section p {
@@ -23,9 +26,19 @@ section p {
     font-size: 30px;
 }
 
-.botoes {
-    padding-top: 10px;
-    padding-bottom: 20px;
+.botao {
+    width: 13rem;
+    padding: 1.2em 0; /* Ajuste de padding para aumentar o tamanho dos botões */
+    font-size: 1.1em; /* Aumenta o tamanho da fonte */
+    background-color: #1245b3; /* Cor de fundo dos botões */
+    color: #ffffff; /* Cor do texto dos botões */
+    border: none; /* Remover borda */
+    border-radius: 8px; /* Borda arredondada */
+    transition: background-color 0.1s ease, transform 0.1s ease; 
+}
+.botao:hover{
+    background-color: rgb(27, 60, 150);; /* Cor do botão ao passar o mouse */
+    cursor: pointer;
 }
 
 .piano {
