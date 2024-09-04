@@ -8,7 +8,8 @@
     <link rel="icon" type="image/png" href="../Imagens/icone.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/piano.css">
     <link rel="stylesheet" href="../css/percepcao/section.css">
 
 </head>
@@ -24,13 +25,17 @@
     <section class="home">
 
         <h1>Treino de Percepção Auditiva</h1>
-        <div class="botoes">
-            <button id="iniciar" class="botao">Iniciar</button>
-            <button id="tentar-novamente" class="botao">Tentar Novamente</button>
-        </div>
 
-        <h3 id="resp">Acertos: 0</h3>
-        <h3 id="tentativa">Tentativas: 10</h3>
+        <div class="botoes-e-tentativas">
+            <div class="botoes">
+                <button id="iniciar" class="botao">Iniciar</button>
+                <button id="tentar-novamente" class="botao">Tentar Novamente</button>
+            </div>
+            <div class="tentativas">
+                <h3 id="resp">Acertos: 0</h3>
+                <h3 id="tentativa">Tentativas: 10</h3>
+            </div>
+        </div>
         <p>Escolha a tecla conforme a nota que você escutar!</p>
     </section>
 
